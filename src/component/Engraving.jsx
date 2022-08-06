@@ -1,5 +1,5 @@
 import "../style/Engraving.css";
-import mococo from "../images/mococo.jpg";
+import mokoko from "../images/mokoko.jpg";
 
 export default function engraving(params) {
   let i = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -22,7 +22,7 @@ export default function engraving(params) {
           <div className="Engraving__action__result"></div>
         </div>
         <div className="Engraving__btn">
-          <img src={mococo} alt="mococo" />
+          <img src={mokoko} alt="mococo" />
         </div>
       </div>
     </>
