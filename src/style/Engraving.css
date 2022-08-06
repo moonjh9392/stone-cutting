@@ -1,0 +1,17 @@
+.Engraving {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Engraving > div {
+  border: 1px solid red;
+}
+
+.Engraving__img {
+}
+.Engraving__action {
+}
+.Engraving__btn {
+}
