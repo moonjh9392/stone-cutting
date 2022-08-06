@@ -8,14 +8,45 @@
 .Engraving > div {
   border: 1px solid red;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Engraving__img {
   flex: 1;
+  width: 100px;
+  height: 100px;
+  background: pink;
+  border-radius: 50%;
 }
 .Engraving__action {
   flex: 3;
 }
 .Engraving__btn {
   flex: 1;
+}
+
+.Engraving__action__box {
+  display: flex;
+  justify-content: space-around;
+}
+.Engraving__action__box > div {
+  margin: 8%;
+}
+.Engraving__action__box__square {
+  border: 10px solid transparent;
+  border-bottom-color: rgb(53, 54, 60);
+  position: relative;
+  top: -10px;
+}
+.Engraving__action__box__square::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: rgb(53, 54, 60);
 }
