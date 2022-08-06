@@ -7,11 +7,15 @@
 
 .Engraving > div {
   border: 1px solid red;
+  height: 100%;
 }
 
 .Engraving__img {
+  flex: 1;
 }
 .Engraving__action {
+  flex: 3;
 }
 .Engraving__btn {
+  flex: 1;
 }
