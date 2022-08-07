@@ -2,4 +2,5 @@
   width: 28%;
   height: 90%;
   background-color: rgb(135, 132, 130);
+  overflow: auto;
 }
