@@ -3,29 +3,43 @@ import mokoko from "../images/mokoko.jpg";
 
 export default function Engraving({ className, Firstele, Firstidx, stone, setStone, percentage, setPercentage }) {
   const handleBtnOnclik = (index) => {
-    let random = Math.floor(Math.random() * 100);
-    let result = false;
-    if (percentage > random) {
-      result = true;
-    }
-    if (result) {
-      if (percentage > 25) {
-        setPercentage(percentage - 10);
+    //index = 0,1,2
+    if (index === 0) {
+      let random = Math.floor(Math.random() * 100); //확률 소숫점 내림
+      let result = "fail";
+      //랜덤으로 나온 숫자보다 percentage(초기 75%) 가 큰 경우 : 성공 / 아닌경우 그대로 fail
+      if (percentage > random) {
+        result = "success";
       }
-    } else {
-      if (percentage < 75) {
-        setPercentage(percentage + 10);
+      //성공이면
+      if (result === "success") {
+        if (percentage > 25) {
+          //확률이 25% 초과일 경우 - 10%
+          setPercentage(percentage - 10);
+        }
+      } else {
+        //실패이면
+        if (percentage < 75) {
+          //확률이 75%미만 일경우 +10%
+          setPercentage(percentage + 10);
+        }
       }
+      console.log(result);
+      setStone(() => {
+        for (let i of stone[index]) {
+          //i 는 {result: '',checked: false}
+          console.log(i);
+          if (!i.checked) {
+            //false 일때만 = 클릭 안한 경우만
+            Object.assign(i, { result: result, checked: true });
+            console.log("1");
+            break;
+          }
+        }
+        console.log(stone);
+        return stone;
+      });
     }
-    console.log(result);
-    for (let i of stone[index]) {
-      if (!i.checked) {
-        i["result"] = result;
-        i["checked"] = true;
-        break;
-      }
-    }
-    console.log(stone[index]);
   };
   return (
     <>
@@ -41,7 +55,7 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
             {Firstele.map((ele, idx) => {
               return (
                 <div>
-                  <div className={"Engraving__action__box__square__" + Firstidx + "_" + idx} key={idx} />
+                  <div className={"Engraving__action__box__square " + ele.result} key={idx} />
                 </div>
               );
             })}
