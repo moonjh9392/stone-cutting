@@ -6,7 +6,7 @@ export default function MainBox(params) {
   return (
     <div className="MainBox">
       {i.map((ele) => {
-        return <Engraving key={ele} />;
+        return <Engraving className={ele === 2 ? "decrease" : "increase"} key={ele} index={ele} />;
       })}
     </div>
   );
