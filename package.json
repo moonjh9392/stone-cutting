@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://moonjh9392.github.io/stone-cutting/index.html",
+  "homepage": "https://moonjh9392.github.io/stone-cutting/",
   "eslintConfig": {
     "extends": [
       "react-app",
