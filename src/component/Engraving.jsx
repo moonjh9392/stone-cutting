@@ -1,18 +1,32 @@
 import "../style/Engraving.css";
 import mokoko from "../images/mokoko.jpg";
+import { useState } from "react";
 
-export default function Engraving({ className, Firstele, Firstidx, stone, setStone, percentage, setPercentage }) {
+export default function Engraving({
+  className,
+  Firstele,
+  Firstidx,
+  stone,
+  setStone,
+  percentage,
+  setPercentage,
+  order,
+  setOrder,
+}) {
+  const [cnt, setCnt] = useState(0);
+  //const copiedStone = stone.slice()
+  const copiedStone = JSON.parse(JSON.stringify(stone));
   const handleBtnOnclik = (index) => {
-    //index = 0,1,2
-    if (index === 0) {
+    if (cnt < 10) {
+      //10칸 초과면 버튼 작동 안함
+      //index = 0,1,2
       let random = Math.floor(Math.random() * 100); //확률 소숫점 내림
-      let result = "fail";
+
       //랜덤으로 나온 숫자보다 percentage(초기 75%) 가 큰 경우 : 성공 / 아닌경우 그대로 fail
-      if (percentage > random) {
-        result = "success";
-      }
+      const isSuccess = percentage > random;
+
       //성공이면
-      if (result === "success") {
+      if (isSuccess) {
         if (percentage > 25) {
           //확률이 25% 초과일 경우 - 10%
           setPercentage(percentage - 10);
@@ -24,21 +38,9 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
           setPercentage(percentage + 10);
         }
       }
-      console.log(result);
-      setStone(() => {
-        for (let i of stone[index]) {
-          //i 는 {result: '',checked: false}
-          console.log(i);
-          if (!i.checked) {
-            //false 일때만 = 클릭 안한 경우만
-            Object.assign(i, { result: result, checked: true });
-            console.log("1");
-            break;
-          }
-        }
-        console.log(stone);
-        return stone;
-      });
+      copiedStone[index][cnt] = Object.assign({}, { result: isSuccess ? "success" : "fail", checked: isSuccess });
+      setStone(copiedStone);
+      setCnt(cnt + 1);
     }
   };
   return (
@@ -54,15 +56,20 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
           <div className="Engraving__action__box">
             {Firstele.map((ele, idx) => {
               return (
-                <div>
-                  <div className={"Engraving__action__box__square " + ele.result} key={idx} />
+                <div key={idx}>
+                  <div className={"Engraving__action__box__square " + ele.result} />
                 </div>
               );
             })}
           </div>
           <div className="Engraving__action__result"></div>
         </div>
-        <div className="Engraving__btn" onClick={() => handleBtnOnclik(Firstidx)}>
+        <div
+          className="Engraving__btn"
+          onClick={() => {
+            handleBtnOnclik(Firstidx);
+          }}
+        >
           <img src={mokoko} alt="mokoko" />
         </div>
       </div>

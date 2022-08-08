@@ -39,7 +39,7 @@
 }
 .Engraving__action__box__square {
   border: 10px solid transparent;
-  border-bottom-color: rgb(53, 54, 60);
+  border-bottom-color: white;
   position: relative;
   top: -10px;
 }
@@ -51,7 +51,7 @@
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-top-color: rgb(53, 54, 60);
+  border-top-color: white;
 }
 
 .increase {
