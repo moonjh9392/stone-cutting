@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/stone-cutting/index.html/static/css/main.062c0e5d.css",
-    "main.js": "/stone-cutting/index.html/static/js/main.a02f631f.js",
-    "static/js/787.1cfcd8dc.chunk.js": "/stone-cutting/index.html/static/js/787.1cfcd8dc.chunk.js",
-    "static/media/mokoko.jpg": "/stone-cutting/index.html/static/media/mokoko.4b1930482b78eb95fdb9.jpg",
-    "index.html": "/stone-cutting/index.html/index.html",
-    "main.062c0e5d.css.map": "/stone-cutting/index.html/static/css/main.062c0e5d.css.map",
-    "main.a02f631f.js.map": "/stone-cutting/index.html/static/js/main.a02f631f.js.map",
-    "787.1cfcd8dc.chunk.js.map": "/stone-cutting/index.html/static/js/787.1cfcd8dc.chunk.js.map"
+    "main.css": "/stone-cutting/static/css/main.062c0e5d.css",
+    "main.js": "/stone-cutting/static/js/main.3c81d31b.js",
+    "static/js/787.1cfcd8dc.chunk.js": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js",
+    "static/media/mokoko.jpg": "/stone-cutting/static/media/mokoko.4b1930482b78eb95fdb9.jpg",
+    "index.html": "/stone-cutting/index.html",
+    "main.062c0e5d.css.map": "/stone-cutting/static/css/main.062c0e5d.css.map",
+    "main.3c81d31b.js.map": "/stone-cutting/static/js/main.3c81d31b.js.map",
+    "787.1cfcd8dc.chunk.js.map": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.062c0e5d.css",
-    "static/js/main.a02f631f.js"
+    "static/js/main.3c81d31b.js"
   ]
 }
