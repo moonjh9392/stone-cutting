@@ -67,6 +67,12 @@
 .success::after {
   border-top-color: blue;
 }
+.success_red {
+  border-bottom-color: red;
+}
+.success_red::after {
+  border-top-color: red;
+}
 .fail {
   border-bottom-color: black;
 }

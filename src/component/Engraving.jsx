@@ -2,17 +2,7 @@ import "../style/Engraving.css";
 import mokoko from "../images/mokoko.jpg";
 import { useState } from "react";
 
-export default function Engraving({
-  className,
-  Firstele,
-  Firstidx,
-  stone,
-  setStone,
-  percentage,
-  setPercentage,
-  order,
-  setOrder,
-}) {
+export default function Engraving({ className, Firstele, Firstidx, stone, setStone, percentage, setPercentage }) {
   const [cnt, setCnt] = useState(0);
   //const copiedStone = stone.slice()
   const copiedStone = JSON.parse(JSON.stringify(stone));
@@ -57,7 +47,13 @@ export default function Engraving({
             {Firstele.map((ele, idx) => {
               return (
                 <div key={idx}>
-                  <div className={"Engraving__action__box__square " + ele.result} />
+                  <div
+                    className={
+                      "Engraving__action__box__square " +
+                      (ele.result === "success" && Firstidx === 2 ? "success_red" : ele.result)
+                      // 클래스 추가로 버튼 클릭시 마름모의 색을 바꿈
+                    }
+                  />
                 </div>
               );
             })}
