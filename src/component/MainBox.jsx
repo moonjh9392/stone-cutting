@@ -6,7 +6,6 @@ export default function MainBox(params) {
   //3x10의 2차원 배열 선언 [[{},{},{}...],[{},{},{}...],[{},{},{}...]]
   const [stone, setStone] = useState(Array.from(Array(3), () => new Array(10).fill({ result: "", checked: false })));
 
-  console.log(stone);
   //성공확률 퍼센테이지 초기값 75%
   const [percentage, setPercentage] = useState(75);
   return (

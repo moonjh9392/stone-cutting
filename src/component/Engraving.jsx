@@ -3,13 +3,14 @@ import mokoko from "../images/mokoko.jpg";
 import { useState } from "react";
 
 export default function Engraving({ className, Firstele, Firstidx, stone, setStone, percentage, setPercentage }) {
-  const [cnt, setCnt] = useState(0);
-  //const copiedStone = stone.slice()
-  const copiedStone = JSON.parse(JSON.stringify(stone));
+  const [cnt, setCnt] = useState(0); //채워지는 칸을 위해 Engraving컴포넌트별 상태 만듬
+  const copiedStone = [...stone]; //stone을 직접 수정하면 안되기 때문에 복사본 만듬
+
   const handleBtnOnclik = (index) => {
+    //index = 0,1,2
     if (cnt < 10) {
       //10칸 초과면 버튼 작동 안함
-      //index = 0,1,2
+
       let random = Math.floor(Math.random() * 100); //확률 소숫점 내림
 
       //랜덤으로 나온 숫자보다 percentage(초기 75%) 가 큰 경우 : 성공 / 아닌경우 그대로 fail
@@ -29,8 +30,9 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
         }
       }
       copiedStone[index][cnt] = Object.assign({}, { result: isSuccess ? "success" : "fail", checked: isSuccess });
-      setStone(copiedStone);
-      setCnt(cnt + 1);
+      //stone[index][cnt]의 객체{}를  { result: "success", checked: true }로 변경
+      setStone(copiedStone); //stone 상태 업데이트
+      setCnt(cnt + 1); //한칸 채워질때마다 다음칸으로 이동
     }
   };
   return (
@@ -40,6 +42,7 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
         {Firstidx !== 1 ? percentage + "%" : ""}
       </div>
       <div className={"Engraving " + className}>
+        {/* className 으로 box-shadow 변경 */}
         <div className="Engraving__img"></div>
         <div className="Engraving__action">
           <div className="Engraving__action__name"></div>
@@ -60,6 +63,7 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
           </div>
           <div className="Engraving__action__result"></div>
         </div>
+        {/* 모코코 망치버튼 */}
         <div
           className="Engraving__btn"
           onClick={() => {
