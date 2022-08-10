@@ -2,13 +2,24 @@ import "../style/Engraving.css";
 import mokoko from "../images/mokoko.jpg";
 import { useState } from "react";
 
-export default function Engraving({ className, Firstele, Firstidx, stone, setStone, percentage, setPercentage }) {
-  const [cnt, setCnt] = useState(0); //채워지는 칸을 위해 Engraving컴포넌트별 상태 만듬
+export default function Engraving({
+  className,
+  Firstele,
+  Firstidx,
+  stone,
+  setStone,
+  percentage,
+  setPercentage,
+  cnt,
+  setCnt,
+}) {
+  // const [cnt, setCnt] = useState(0); //채워지는 칸을 위해 Engraving컴포넌트별 상태 만듬
   const copiedStone = [...stone]; //stone을 직접 수정하면 안되기 때문에 복사본 만듬
-
+  const copiedCnt = [...cnt]; //cnt를 직접 수정하면 안되기 때문에 복사본 만듬
   const handleBtnOnclik = (index) => {
     //index = 0,1,2
-    if (cnt < 10) {
+    if (copiedCnt[index] < 10) {
+      console.log(copiedCnt[index]);
       //10칸 초과면 버튼 작동 안함
 
       let random = Math.floor(Math.random() * 100); //확률 소숫점 내림
@@ -29,15 +40,19 @@ export default function Engraving({ className, Firstele, Firstidx, stone, setSto
           setPercentage(percentage + 10);
         }
       }
-      copiedStone[index][cnt] = Object.assign({}, { result: isSuccess ? "success" : "fail", checked: isSuccess });
-      //stone[index][cnt]의 객체{}를  { result: "success", checked: true }로 변경
+      copiedStone[index][copiedCnt[index]] = Object.assign(
+        {},
+        { result: isSuccess ? "success" : "fail", checked: isSuccess }
+      );
+      //stone[index][copiedCnt[index]]의 객체{}를  { result: "success", checked: true }로 변경
       setStone(copiedStone); //stone 상태 업데이트
-      setCnt(cnt + 1); //한칸 채워질때마다 다음칸으로 이동
+      copiedCnt[index] += 1;
+      setCnt(copiedCnt); //한칸 채워질때마다 다음칸으로 이동
     }
   };
   return (
     <>
-      <div>
+      <div className="Engraving__percentage">
         {Firstidx === 0 ? "성공확률 " : Firstidx === 2 ? "균열확률 " : ""}
         {Firstidx !== 1 ? percentage + "%" : ""}
       </div>

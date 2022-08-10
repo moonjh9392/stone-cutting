@@ -38,6 +38,11 @@
   margin: 8%;
 }
 
+.Engraving__percentage {
+  padding-right: 5%;
+  text-align: right;
+}
+
 img {
   width: 100%;
   height: 100%;

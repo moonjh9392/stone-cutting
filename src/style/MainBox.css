@@ -9,3 +9,7 @@
 .MainBox > div {
   margin: 3px;
 }
+.clearBtn {
+  margin-left: 5%;
+  width: 10%;
+}
