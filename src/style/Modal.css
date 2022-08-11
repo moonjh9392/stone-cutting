@@ -111,3 +111,7 @@
 .red::after {
   border-top-color: red;
 }
+footer {
+  display: flex;
+  justify-content: space-between;
+}

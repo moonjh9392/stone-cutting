@@ -3,7 +3,7 @@ import "../style/MainBox.css";
 import Engraving from "./Engraving";
 import Modal from "./Modal";
 
-export default function MainBox(params) {
+export default function MainBox({ rend, setRend }) {
   //3x10의 2차원 배열 선언 [[{},{},{}...],[{},{},{}...],[{},{},{}...]]
   const clear = Array.from(Array(3), () => new Array(10).fill({ result: "", checked: false }));
   const clearArray = [0, 0, 0];
@@ -39,7 +39,17 @@ export default function MainBox(params) {
   }, [cnt]);
   return (
     <div className="MainBox">
-      {modalOpen ? <Modal open={modalOpen} close={closeModal} header="짜잔~!" result={result} /> : null}
+      {modalOpen ? (
+        <Modal
+          open={modalOpen}
+          close={closeModal}
+          header="짜잔~!"
+          result={result}
+          stone={stone}
+          rend={rend}
+          setRend={setRend}
+        />
+      ) : null}
       <button className="clearBtn" onClick={clearBtnOnClick}>
         새 돌 꺼내기
       </button>
