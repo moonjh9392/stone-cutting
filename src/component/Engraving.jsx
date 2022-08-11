@@ -12,14 +12,16 @@ export default function Engraving({
   setPercentage,
   cnt,
   setCnt,
+  result,
+  setResult,
 }) {
   // const [cnt, setCnt] = useState(0); //채워지는 칸을 위해 Engraving컴포넌트별 상태 만듬
   const copiedStone = [...stone]; //stone을 직접 수정하면 안되기 때문에 복사본 만듬
   const copiedCnt = [...cnt]; //cnt를 직접 수정하면 안되기 때문에 복사본 만듬
+  const copiedResult = [...result]; //cnt를 직접 수정하면 안되기 때문에 복사본 만듬
   const handleBtnOnclik = (index) => {
     //index = 0,1,2
     if (copiedCnt[index] < 10) {
-      console.log(copiedCnt[index]);
       //10칸 초과면 버튼 작동 안함
 
       let random = Math.floor(Math.random() * 100); //확률 소숫점 내림
@@ -33,6 +35,8 @@ export default function Engraving({
           //확률이 25% 초과일 경우 - 10%
           setPercentage(percentage - 10);
         }
+        copiedResult[index] += 1;
+        setResult(copiedResult);
       } else {
         //실패이면
         if (percentage < 75) {
@@ -53,8 +57,8 @@ export default function Engraving({
   return (
     <>
       <div className="Engraving__percentage">
-        {Firstidx === 0 ? "성공확률 " : Firstidx === 2 ? "균열확률 " : ""}
-        {Firstidx !== 1 ? percentage + "%" : ""}
+        {Firstidx === 0 ? "성공확률 " : Firstidx === 2 ? "균열확률 " : null}
+        {Firstidx !== 1 ? percentage + "%" : null}
       </div>
       <div className={"Engraving " + className}>
         {/* className 으로 box-shadow 변경 */}
