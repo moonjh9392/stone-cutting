@@ -1,6 +1,5 @@
 import "../style/Engraving.css";
 import mokoko from "../images/mokoko.jpg";
-import { useState } from "react";
 
 export default function Engraving({
   className,
