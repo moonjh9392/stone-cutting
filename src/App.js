@@ -6,14 +6,15 @@ import { useState } from "react";
 
 function App() {
   const [rend, setRend] = useState(false);
+  const [viewStone, setViewStone] = useState({});
   return (
     <div className="App">
       <div className="AppTop">
-        <SideBox rend={rend} setRend={setRend} />
+        <SideBox rend={rend} setRend={setRend} viewStone={viewStone} setViewStone={setViewStone} />
         <MainBox rend={rend} setRend={setRend} />
       </div>
       <div className="AppBottom">
-        <BottomBox />
+        <BottomBox viewStone={viewStone} />
       </div>
     </div>
   );
