@@ -3,11 +3,8 @@ import "../style/MainBox.css";
 import Engraving from "./Engraving";
 import Modal from "./Modal";
 
-export default function MainBox({ rend, setRend }) {
-  //3x10의 2차원 배열 선언 [[{},{},{}...],[{},{},{}...],[{},{},{}...]]
-  const clear = Array.from(Array(3), () => new Array(10).fill({ result: "", checked: false }));
+export default function MainBox({ stone, setStone, clear }) {
   const clearArray = [0, 0, 0];
-  const [stone, setStone] = useState(clear);
   const [cnt, setCnt] = useState(clearArray);
   const [result, setResult] = useState(clearArray);
   const [modalOpen, setModalOpen] = useState(false);
@@ -46,13 +43,17 @@ export default function MainBox({ rend, setRend }) {
           header="짜잔~!"
           result={result}
           stone={stone}
-          rend={rend}
-          setRend={setRend}
+          setStone={setStone}
+          clear={clear}
         />
       ) : null}
-      <button className="clearBtn" onClick={clearBtnOnClick}>
-        새 돌 꺼내기
-      </button>
+      <div>
+        <button className="clearBtn" onClick={clearBtnOnClick}>
+          새 돌 꺼내기
+        </button>
+        <button>저장</button>
+      </div>
+
       {stone.map((ele, idx) => {
         return (
           <Engraving

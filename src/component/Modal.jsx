@@ -2,7 +2,7 @@ import "../style/Modal.css";
 
 export default function Modal(props) {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, header, result, stone, rend, setRend } = props;
+  const { open, close, header, result, stone, setStone, clear } = props;
 
   const saveStone = () => {
     //localStorage에 세공한 돌의 결과 저장
@@ -14,7 +14,6 @@ export default function Modal(props) {
     if (stones === null || stones.length === 0) {
       stones = [];
       objStone.key = 0;
-      console.log(objStone.key);
       stones.push(objStone);
     } else {
       let maxKey = 0;
@@ -24,9 +23,8 @@ export default function Modal(props) {
       objStone.key = maxKey;
       stones.push(objStone);
     }
-    console.log(stones[stones.length - 1].key);
     localStorage.setItem("stones", JSON.stringify(stones));
-    setRend(!rend);
+    setStone(clear);
     close();
   };
   return (
