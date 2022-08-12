@@ -11,14 +11,20 @@ export default function Modal(props) {
       result: result,
       stone: stone,
     };
-    console.log(stones);
-    if (stones === null) {
+    if (stones === null || stones.length === 0) {
       stones = [];
+      objStone.key = 0;
+      console.log(objStone.key);
       stones.push(objStone);
     } else {
+      let maxKey = 0;
+      if (Array.isArray(stones)) {
+        maxKey = stones[stones.length - 1].key + 1;
+      }
+      objStone.key = maxKey;
       stones.push(objStone);
     }
-
+    console.log(stones[stones.length - 1].key);
     localStorage.setItem("stones", JSON.stringify(stones));
     setRend(!rend);
     close();

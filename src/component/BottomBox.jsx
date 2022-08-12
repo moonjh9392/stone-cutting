@@ -3,7 +3,6 @@ export default function BottomBox({ viewStone }) {
   const getStone = viewStone === {} ? false : viewStone.stone;
   return (
     <div className="BottomBox">
-      <div>순서대로 안지우면 밑에 안지워짐 새로고침 해야됨(수정중)</div>
       {getStone
         ? viewStone.stone.map((ele, idx) => {
             return (
