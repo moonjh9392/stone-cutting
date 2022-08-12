@@ -43,9 +43,7 @@ export default function MainBox({ stone, setStone, clear }) {
           header="짜잔~!"
           result={result}
           stone={stone}
-          setStone={setStone}
-          clear={clear}
-          setPercentage={setPercentage}
+          clear={clearBtnOnClick}
         />
       ) : null}
       <div>

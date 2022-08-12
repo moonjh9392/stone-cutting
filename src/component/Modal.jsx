@@ -2,7 +2,7 @@ import "../style/Modal.css";
 
 export default function Modal(props) {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, header, result, stone, setStone, clear, setPercentage } = props;
+  const { open, close, header, result, stone, clear } = props;
 
   const saveStone = () => {
     //localStorage에 세공한 돌의 결과 저장
@@ -24,8 +24,7 @@ export default function Modal(props) {
       stones.push(objStone);
     }
     localStorage.setItem("stones", JSON.stringify(stones));
-    setPercentage(75);
-    setStone(clear);
+    clear();
     close();
   };
   return (
