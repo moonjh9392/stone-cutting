@@ -8,3 +8,9 @@
   display: flex;
   justify-content: center;
 }
+.blue {
+  color: blue;
+}
+.red {
+  color: red;
+}

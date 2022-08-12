@@ -2,31 +2,8 @@ import "../style/Modal.css";
 
 export default function Modal(props) {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
-  const { open, close, header, result, stone, clear } = props;
+  const { open, close, header, result, saveStone } = props;
 
-  const saveStone = () => {
-    //localStorage에 세공한 돌의 결과 저장
-    let stones = JSON.parse(localStorage.getItem("stones"));
-    let objStone = {
-      result: result,
-      stone: stone,
-    };
-    if (stones === null || stones.length === 0) {
-      stones = [];
-      objStone.key = 0;
-      stones.push(objStone);
-    } else {
-      let maxKey = 0;
-      if (Array.isArray(stones)) {
-        maxKey = stones[stones.length - 1].key + 1;
-      }
-      objStone.key = maxKey;
-      stones.push(objStone);
-    }
-    localStorage.setItem("stones", JSON.stringify(stones));
-    clear();
-    close();
-  };
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
     <div className={open ? "openModal modal" : "modal"}>
