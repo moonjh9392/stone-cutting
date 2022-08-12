@@ -45,6 +45,7 @@ export default function MainBox({ stone, setStone, clear }) {
           stone={stone}
           setStone={setStone}
           clear={clear}
+          setPercentage={setPercentage}
         />
       ) : null}
       <div>
