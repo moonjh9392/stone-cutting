@@ -51,7 +51,7 @@ export default function MainBox({ stone, setStone, clear }) {
         <button className="clearBtn" onClick={clearBtnOnClick}>
           새 돌 꺼내기
         </button>
-        <button>저장</button>
+        {/* <button>저장</button> */}
       </div>
 
       {stone.map((ele, idx) => {
