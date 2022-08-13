@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/stone-cutting/static/css/main.a909b84d.css",
-    "main.js": "/stone-cutting/static/js/main.0bf19785.js",
+    "main.css": "/stone-cutting/static/css/main.0932a633.css",
+    "main.js": "/stone-cutting/static/js/main.f777f23a.js",
     "static/js/787.1cfcd8dc.chunk.js": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js",
     "static/media/mokoko.jpg": "/stone-cutting/static/media/mokoko.4b1930482b78eb95fdb9.jpg",
     "index.html": "/stone-cutting/index.html",
-    "main.a909b84d.css.map": "/stone-cutting/static/css/main.a909b84d.css.map",
-    "main.0bf19785.js.map": "/stone-cutting/static/js/main.0bf19785.js.map",
+    "main.0932a633.css.map": "/stone-cutting/static/css/main.0932a633.css.map",
+    "main.f777f23a.js.map": "/stone-cutting/static/js/main.f777f23a.js.map",
     "787.1cfcd8dc.chunk.js.map": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a909b84d.css",
-    "static/js/main.0bf19785.js"
+    "static/css/main.0932a633.css",
+    "static/js/main.f777f23a.js"
   ]
 }
