@@ -187,19 +187,20 @@ img {
 
 @media (max-width: 460px) {
   .Engraving__action__box__square {
-    border: 5px solid transparent;
+    border: 6px solid transparent;
     border-bottom-color: white;
     position: relative;
-    top: -5px;
+    top: -6px;
+    /* transform: rotate(45deg); */
   }
   .Engraving__action__box__square::after {
     content: "";
     position: absolute;
-    left: -5px;
-    top: 5px;
+    left: -6px;
+    top: 6px;
     width: 0;
     height: 0;
-    border: 5px solid transparent;
+    border: 6px solid transparent;
     border-top-color: white;
   }
 }
@@ -227,8 +228,8 @@ img {
   border-top-color: red;
 }
 .fail {
-  border-bottom-color: black;
+  border-bottom-color: rgb(75, 72, 72);
 }
 .fail::after {
-  border-top-color: black;
+  border-top-color: rgb(75, 72, 72);
 }
