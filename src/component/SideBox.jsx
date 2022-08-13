@@ -12,13 +12,20 @@ export default function SideBox({ rend, setRend, viewStone, setViewStone, getSto
     }
   };
 
+  const clearStones = () => {
+    localStorage.removeItem("stones");
+    newStone();
+  };
+
   return (
     <div className="SideBox">
+      <button onClick={clearStones}>초기화</button>
       {stones !== null
         ? stones.map((ele, idx) => {
             return (
               <div className="sideStones" key={idx}>
                 <div>
+                  <span>[{idx + 1}]</span>
                   <span className="blue">{ele.result[0]}</span>&nbsp;
                   <span className="blue">{ele.result[1]}</span>&nbsp;
                   <span className="red">{ele.result[2]}</span>&nbsp;돌
