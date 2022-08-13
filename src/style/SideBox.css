@@ -1,6 +1,6 @@
 .SideBox {
   width: 28%;
-  height: 90%;
+  height: 80%;
   background-color: rgb(135, 132, 130);
   overflow: auto;
 }
@@ -13,4 +13,10 @@
 }
 .red {
   color: red;
+}
+@media (max-width: 460px) {
+  .SideBox {
+    width: 100%;
+    height: 40%;
+  }
 }

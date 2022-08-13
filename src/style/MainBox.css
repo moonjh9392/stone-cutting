@@ -1,8 +1,14 @@
 .MainBox {
   width: 70%;
-  height: 90%;
+  height: 80%;
   background-color: rgb(135, 132, 130);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+@media (max-width: 460px) {
+  .MainBox {
+    width: 100%;
+    height: 55%;
+  }
 }

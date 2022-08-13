@@ -67,7 +67,6 @@ export default function Engraving({
       </div>
       <div className={"Engraving " + className}>
         {/* className 으로 box-shadow 변경 */}
-        <div className="Engraving__img"></div>
         <div className="Engraving__action">
           <div className="Engraving__action__name"></div>
           <div className="Engraving__action__box">

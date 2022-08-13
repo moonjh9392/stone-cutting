@@ -1,5 +1,5 @@
 .App {
-  height: 90vh;
+  height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -7,18 +7,23 @@
   align-items: center;
 }
 .App > div {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1%;
+  height: 100%;
 }
 .App > div > div {
   border-radius: 10px;
 }
-.AppTop {
-  height: 70%;
-}
-.AppBottom {
-  height: 30%;
+
+@media (max-width: 460px) {
+  .App > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .AppTop {
+    height: 100%;
+  }
 }

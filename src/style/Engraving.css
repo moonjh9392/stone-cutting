@@ -83,6 +83,32 @@ img {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .Engraving__action__box__square {
+    border: 9px solid transparent;
+    border-bottom-color: white;
+    position: relative;
+    top: -9px;
+  }
+  .Engraving__action__box__square::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 9px;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-top-color: white;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait),
+  ##Screen = B/w 768px to 1024px
+  ##Device = 태블릿, 아이패드(세로),
+  ##Screen = 768px에서 1024px 사이
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Engraving__action__box__square {
     border: 8px solid transparent;
     border-bottom-color: white;
     position: relative;
@@ -101,32 +127,6 @@ img {
 }
 
 /*
-  ##Device = Tablets, Ipads (portrait),
-  ##Screen = B/w 768px to 1024px
-  ##Device = 태블릿, 아이패드(세로),
-  ##Screen = 768px에서 1024px 사이
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .Engraving__action__box__square {
-    border: 6px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -6px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -6px;
-    top: 6px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: white;
-  }
-}
-
-/*
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
   ##Device = 태블릿, 아이패드(가로)
@@ -135,19 +135,19 @@ img {
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .Engraving__action__box__square {
-    border: 6px solid transparent;
+    border: 7px solid transparent;
     border-bottom-color: white;
     position: relative;
-    top: -6px;
+    top: -7px;
   }
   .Engraving__action__box__square::after {
     content: "";
     position: absolute;
-    left: -6px;
-    top: 6px;
+    left: -7px;
+    top: 7px;
     width: 0;
     height: 0;
-    border: 6px solid transparent;
+    border: 7px solid transparent;
     border-top-color: white;
   }
 }
@@ -159,21 +159,21 @@ img {
   ##Screen = 481px에서 767px 사이
   */
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 461px) and (max-width: 767px) {
   .Engraving__action__box__square {
-    border: 4px solid transparent;
+    border: 6px solid transparent;
     border-bottom-color: white;
     position: relative;
-    top: -4px;
+    top: -6px;
   }
   .Engraving__action__box__square::after {
     content: "";
     position: absolute;
-    left: -4px;
-    top: 4px;
+    left: -6px;
+    top: 6px;
     width: 0;
     height: 0;
-    border: 4px solid transparent;
+    border: 6px solid transparent;
     border-top-color: white;
   }
 }
@@ -185,21 +185,21 @@ img {
   ##Screen = 320px에서 479px 사이
   */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 460px) {
   .Engraving__action__box__square {
-    border: 3px solid transparent;
+    border: 5px solid transparent;
     border-bottom-color: white;
     position: relative;
-    top: -3px;
+    top: -5px;
   }
   .Engraving__action__box__square::after {
     content: "";
     position: absolute;
-    left: -3px;
-    top: 3px;
+    left: -5px;
+    top: 5px;
     width: 0;
     height: 0;
-    border: 3px solid transparent;
+    border: 5px solid transparent;
     border-top-color: white;
   }
 }

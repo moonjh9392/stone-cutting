@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../style/MainBox.css";
 import Engraving from "./Engraving";
 import Modal from "./Modal";
@@ -12,8 +11,6 @@ export default function MainBox({
   setResult,
   percentage,
   setPercentage,
-  stoneKey,
-  setStoneKey,
   newStone,
   closeModal,
   modalOpen,
