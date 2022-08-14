@@ -2,10 +2,21 @@
   width: 28%;
   height: 80%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SideBox > div {
+  width: 50%;
 }
 .sideStones {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+.sideBtn {
+  border: 1px solid black;
+  background-color: white;
 }
 .blue {
   color: blue;

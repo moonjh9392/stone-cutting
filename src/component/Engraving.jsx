@@ -61,29 +61,30 @@ export default function Engraving({
   };
   return (
     <>
-      <div className="Engraving__percentage">
-        {Firstidx === 0 ? "성공확률 " : Firstidx === 2 ? "균열확률 " : null}
-        {Firstidx !== 1 ? percentage + "%" : null}
+      {Firstidx !== 1 ? (
+        <div className="Engraving__percentage">
+          {Firstidx === 0 ? "성공확률 " : Firstidx === 2 ? "균열확률 " : null}
+          {percentage}%
+        </div>
+      ) : null}
+      <div className="Engraving__result">
+        <div className={"result__" + className} />
+        <div className="plusText">&nbsp;&nbsp;&nbsp;+{result[Firstidx]}</div>
       </div>
       <div className={"Engraving " + className}>
         {/* className 으로 box-shadow 변경 */}
         <div className="Engraving__action">
-          <div className="Engraving__action__name"></div>
-          <div className="Engraving__action__box">
-            {Firstele.map((ele, idx) => {
-              return (
-                <div key={idx}>
-                  <div
-                    className={
-                      "Engraving__action__box__square " +
-                      (ele.result === "success" && Firstidx === 2 ? "success_red" : ele.result)
-                      // 클래스 추가로 버튼 클릭시 마름모의 색을 바꿈
-                    }
-                  />
-                </div>
-              );
-            })}
-          </div>
+          {Firstele.map((ele, idx) => {
+            return (
+              <div
+                key={idx}
+                className={
+                  "rhombus " + (ele.result === "success" && Firstidx === 2 ? "success_red" : ele.result)
+                  // 클래스 추가로 버튼 클릭시 마름모의 색을 바꿈
+                }
+              />
+            );
+          })}
           <div className="Engraving__action__result"></div>
         </div>
         {/* 모코코 망치버튼 */}

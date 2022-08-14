@@ -1,24 +1,14 @@
 .Engraving {
-  width: 99%;
+  width: 95%;
   height: 15%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.Engraving > div {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1%;
-}
-
-.Engraving__img {
-  flex: 0.5;
-}
 .Engraving__action {
   flex: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .Engraving__btn {
   flex: 0.5;
@@ -26,183 +16,22 @@
 .Engraving__btn:hover {
   cursor: pointer;
 }
-.Engraving__img:hover {
-  cursor: pointer;
-}
-
-.Engraving__action__box {
-  display: flex;
-  justify-content: space-around;
-}
-.Engraving__action__box > div {
-  margin: 8%;
-}
-
-.Engraving__percentage {
-  padding-right: 5%;
-  text-align: right;
-}
 
 img {
   width: 100%;
   height: 100%;
 }
-
-/*
-##Device = Desktops
-##Screen = 1281px to higher resolution desktops
-##Device = 데스크탑
-##Screen = 1281px 이상 해상도 데스크탑
-*/
-
-@media (min-width: 1281px) {
-  .Engraving__action__box__square {
-    border: 10px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -10px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    top: 10px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-color: white;
-  }
+/* 마름모 */
+.rhombus {
+  width: 3%;
+  border: 1px solid black;
+  background-color: white;
+  transform: rotate(45deg);
 }
-
-/*
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-  ##Device = 랩탑, 데스크탑
-  ##Screen = 1025px에서 1280px 사이
-  */
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .Engraving__action__box__square {
-    border: 9px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -9px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 9px;
-    width: 0;
-    height: 0;
-    border: 9px solid transparent;
-    border-top-color: white;
-  }
-}
-
-/*
-  ##Device = Tablets, Ipads (portrait),
-  ##Screen = B/w 768px to 1024px
-  ##Device = 태블릿, 아이패드(세로),
-  ##Screen = 768px에서 1024px 사이
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .Engraving__action__box__square {
-    border: 8px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -8px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -8px;
-    top: 8px;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-top-color: white;
-  }
-}
-
-/*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-  ##Device = 태블릿, 아이패드(가로)
-  ##Screen = 768px에서 1024px 사이
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .Engraving__action__box__square {
-    border: 7px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -7px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -7px;
-    top: 7px;
-    width: 0;
-    height: 0;
-    border: 7px solid transparent;
-    border-top-color: white;
-  }
-}
-
-/*
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-  ##Device = 저해상도 태블릿, 모바일(가로)
-  ##Screen = 481px에서 767px 사이
-  */
-
-@media (min-width: 461px) and (max-width: 767px) {
-  .Engraving__action__box__square {
-    border: 6px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -6px;
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -6px;
-    top: 6px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: white;
-  }
-}
-
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-  ##Device = 대부분의 스마트폰 모바일 기기(세로)
-  ##Screen = 320px에서 479px 사이
-  */
-
-@media (max-width: 460px) {
-  .Engraving__action__box__square {
-    border: 6px solid transparent;
-    border-bottom-color: white;
-    position: relative;
-    top: -6px;
-    /* transform: rotate(45deg); */
-  }
-  .Engraving__action__box__square::after {
-    content: "";
-    position: absolute;
-    left: -6px;
-    top: 6px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: white;
-  }
+.rhombus::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 /* 컴포넌트 그림자색 변경 */
@@ -216,20 +45,44 @@ img {
 
 /* 모코코 망치 클릭시 class추가로 변경되는 색상 */
 .success {
-  border-bottom-color: blue;
-}
-.success::after {
-  border-top-color: blue;
+  background-color: blue;
 }
 .success_red {
-  border-bottom-color: red;
-}
-.success_red::after {
-  border-top-color: red;
+  background-color: red;
 }
 .fail {
-  border-bottom-color: rgb(75, 72, 72);
+  background-color: rgb(75, 72, 72);
 }
-.fail::after {
-  border-top-color: rgb(75, 72, 72);
+
+.Engraving__result {
+  width: 95%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+.plusText {
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+.result__increase {
+  width: 2%;
+  transform: rotate(45deg);
+}
+.result__increase::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  background-color: blue;
+}
+.result__decrease {
+  width: 2%;
+  transform: rotate(45deg);
+}
+.result__decrease::after {
+  content: "";
+  display: block;
+  background-color: red;
+  padding-bottom: 100%;
 }

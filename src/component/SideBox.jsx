@@ -20,22 +20,26 @@ export default function SideBox({ rend, setRend, viewStone, setViewStone, getSto
   return (
     <div className="SideBox">
       <button onClick={clearStones}>초기화</button>
-      {stones !== null
-        ? stones.map((ele, idx) => {
-            return (
-              <div className="sideStones" key={idx}>
-                <div>
+      <div>
+        {stones !== null
+          ? stones.map((ele, idx) => {
+              return (
+                <div className="sideStones" key={idx}>
                   <span>[{idx + 1}]</span>
                   <span className="blue">{ele.result[0]}</span>&nbsp;
                   <span className="blue">{ele.result[1]}</span>&nbsp;
                   <span className="red">{ele.result[2]}</span>&nbsp;돌
+                  <span class="material-icons sideBtn" onClick={() => getStone(ele)}>
+                    trending_flat
+                  </span>
+                  <span class="material-icons sideBtn" onClick={() => deleteStone(idx, ele.key)}>
+                    close
+                  </span>
                 </div>
-                <button onClick={() => getStone(ele)}>꺼내기</button>
-                <button onClick={() => deleteStone(idx, ele.key)}>지우기</button>
-              </div>
-            );
-          })
-        : null}
+              );
+            })
+          : null}
+      </div>
     </div>
   );
 }

@@ -14,7 +14,6 @@
   height: 100%;
 }
 .App > div > div {
-  /* border: 1px solid rgb(135, 132, 130); */
   background-color: rgb(135, 132, 130);
   border-radius: 10px;
 }
