@@ -69,7 +69,7 @@ export default function Engraving({
       ) : null}
       <div className="Engraving__result">
         <div className={"result__" + className} />
-        <div className="plusText">&nbsp;&nbsp;&nbsp;+{result[Firstidx]}</div>
+        <div className="plusText">+{result[Firstidx]}</div>
       </div>
       <div className={"Engraving " + className}>
         {/* className 으로 box-shadow 변경 */}

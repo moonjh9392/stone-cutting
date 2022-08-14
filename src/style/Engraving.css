@@ -59,30 +59,31 @@ img {
   height: 5%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   color: white;
 }
 .plusText {
-  width: 10%;
-  display: flex;
-  align-items: center;
+  width: 5%;
 }
 .result__increase {
   width: 2%;
+  border: 1px solid black;
+  background-color: blue;
   transform: rotate(45deg);
 }
 .result__increase::after {
   content: "";
   display: block;
   padding-bottom: 100%;
-  background-color: blue;
 }
 .result__decrease {
   width: 2%;
+  border: 1px solid black;
+  background-color: red;
   transform: rotate(45deg);
 }
 .result__decrease::after {
   content: "";
   display: block;
-  background-color: red;
   padding-bottom: 100%;
 }
