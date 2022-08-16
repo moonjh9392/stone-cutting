@@ -42,14 +42,24 @@ export default function Engraving({
           }
           copiedResult[index] += 1;
           setResult(copiedResult);
-          // audioSuc.current.play();
+          if (audioSuc.current.paused) {
+            audioSuc.current.play();
+          } else {
+            audioSuc.current.pause();
+            audioFail.current.play();
+          }
         } else {
           //실패이면
           if (percentage < 75) {
             //확률이 75%미만 일경우 +10%
             setPercentage(percentage + 10);
           }
-          // audioFail.current.play();
+          if (audioFail.current.paused) {
+            audioFail.current.play();
+          } else {
+            audioFail.current.pause();
+            audioFail.current.play();
+          }
         }
         copiedStone[index][copiedCnt[index]] = Object.assign(
           {},
