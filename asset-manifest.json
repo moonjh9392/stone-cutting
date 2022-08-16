@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/stone-cutting/static/css/main.8bacb7e3.css",
-    "main.js": "/stone-cutting/static/js/main.cddb399f.js",
+    "main.js": "/stone-cutting/static/js/main.53b4d9dc.js",
     "static/js/787.1cfcd8dc.chunk.js": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js",
     "static/media/mokoko.jpg": "/stone-cutting/static/media/mokoko.4b1930482b78eb95fdb9.jpg",
     "static/media/suc.m4a": "/stone-cutting/static/media/suc.9771454f11e8d2ba07c8.m4a",
     "static/media/fail.m4a": "/stone-cutting/static/media/fail.6e23c17f50e3d932e51e.m4a",
     "index.html": "/stone-cutting/index.html",
     "main.8bacb7e3.css.map": "/stone-cutting/static/css/main.8bacb7e3.css.map",
-    "main.cddb399f.js.map": "/stone-cutting/static/js/main.cddb399f.js.map",
+    "main.53b4d9dc.js.map": "/stone-cutting/static/js/main.53b4d9dc.js.map",
     "787.1cfcd8dc.chunk.js.map": "/stone-cutting/static/js/787.1cfcd8dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8bacb7e3.css",
-    "static/js/main.cddb399f.js"
+    "static/js/main.53b4d9dc.js"
   ]
 }
