@@ -29,10 +29,10 @@ export default function SideBox({ rend, setRend, viewStone, setViewStone, getSto
                   <span className="blue">{ele.result[0]}</span>&nbsp;
                   <span className="blue">{ele.result[1]}</span>&nbsp;
                   <span className="red">{ele.result[2]}</span>&nbsp;돌
-                  <span class="material-icons sideBtn" onClick={() => getStone(ele)}>
+                  <span className="material-icons sideBtn" onClick={() => getStone(ele)}>
                     trending_flat
                   </span>
-                  <span class="material-icons sideBtn" onClick={() => deleteStone(idx, ele.key)}>
+                  <span className="material-icons sideBtn" onClick={() => deleteStone(idx, ele.key)}>
                     close
                   </span>
                 </div>
