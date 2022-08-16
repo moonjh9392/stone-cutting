@@ -1,6 +1,9 @@
 import "../style/MainBox.css";
 import Engraving from "./Engraving";
 import Modal from "./Modal";
+import suc from "../audio/suc.m4a";
+import fail from "../audio/fail.m4a";
+import { useRef } from "react";
 
 export default function MainBox({
   stone,
@@ -15,6 +18,8 @@ export default function MainBox({
   closeModal,
   modalOpen,
 }) {
+  const audioSuc = useRef();
+  const audioFail = useRef();
   return (
     <div className="MainBox">
       {modalOpen ? <Modal open={modalOpen} close={closeModal} header="짜잔~!" result={result} /> : null}
@@ -39,9 +44,13 @@ export default function MainBox({
             setCnt={setCnt}
             result={result}
             setResult={setResult}
+            audioSuc={audioSuc}
+            audioFail={audioFail}
           />
         );
       })}
+      <audio id="audio_suc" ref={audioSuc} src={suc} />
+      <audio id="audio_fail" ref={audioFail} src={fail} />
     </div>
   );
 }

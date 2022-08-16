@@ -13,7 +13,8 @@ export default function Engraving({
   setCnt,
   result,
   setResult,
-  saveStone,
+  audioSuc,
+  audioFail,
 }) {
   // const [cnt, setCnt] = useState(0); //채워지는 칸을 위해 Engraving컴포넌트별 상태 만듬
   const copiedStone = [...stone]; //stone을 직접 수정하면 안되기 때문에 복사본 만듬
@@ -41,12 +42,14 @@ export default function Engraving({
           }
           copiedResult[index] += 1;
           setResult(copiedResult);
+          audioSuc.current.play();
         } else {
           //실패이면
           if (percentage < 75) {
             //확률이 75%미만 일경우 +10%
             setPercentage(percentage + 10);
           }
+          audioFail.current.play();
         }
         copiedStone[index][copiedCnt[index]] = Object.assign(
           {},
