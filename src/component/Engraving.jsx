@@ -45,8 +45,7 @@ export default function Engraving({
           if (audioSuc.current.paused) {
             audioSuc.current.play();
           } else {
-            audioSuc.current.pause();
-            audioFail.current.play();
+            audioSuc.current.currentTime = 0;
           }
         } else {
           //실패이면
@@ -57,8 +56,7 @@ export default function Engraving({
           if (audioFail.current.paused) {
             audioFail.current.play();
           } else {
-            audioFail.current.pause();
-            audioFail.current.play();
+            audioFail.current.currentTime = 0;
           }
         }
         copiedStone[index][copiedCnt[index]] = Object.assign(
